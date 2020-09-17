@@ -4147,12 +4147,6 @@ vue-loader@^12.1.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-multiple-button:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/vue-multiple-button/download/vue-multiple-button-1.0.1.tgz#9f7370f6d900e7c7c79f6380e1a68bdef86e15b6"
-  dependencies:
-    vue "^2.3.3"
-
 vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-3.0.1.tgz#c8b639bb2f24baf9d78274dc17e4f264c1deda08"

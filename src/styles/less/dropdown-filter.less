@@ -1,0 +1,224 @@
+.@{css-prefix}dropdown-filter {
+  // vertical-align: sub;
+  display: inline-block;
+
+  [class*="@{css-prefix}icon"] {
+    margin-left: 8px;
+    transition: transform .3s;
+  }
+
+  &:hover:not(.is-disabled) {
+    cursor: pointer;
+    color: @dropdown-filter-primary-color;
+  }
+
+  &.dropdown-open {
+    color: @dropdown-filter-primary-color;
+  }
+
+  &.is-disabled {
+    color: @disabled-color;
+    cursor: not-allowed;
+  }
+
+  &.dropdown-open {
+    .@{css-prefix}icon-down {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-filter {
+    font-size: 14px;
+  }
+}
+
+.@{css-prefix}dropdown-filter-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 0;
+  min-width: 150px;
+  background-color: #fff;
+  border: 1px solid @popover-border-color;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding-left: 0;
+  padding-right: 0;
+  min-width: 100px;
+
+  &[x-out-of-boundaries] {
+    display: none;
+  }
+
+  .el-scrollbar {
+    line-height: 1;
+    font-size: 0;
+  }
+
+  .@{css-prefix}dropdown-filter-scrollbar-view {
+    padding-left: 0;
+  }
+
+  .@{css-prefix}dropdown-filter-item {
+    padding: 0 8px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 32px;
+    list-style: none;
+    cursor: pointer;
+
+    &:not(.is-disabled):hover {
+      color: #48576a;
+      background-color: @dropdown-filter-primary-color-hover;
+    }
+
+    &.is-disabled {
+      color: #bfcbd9;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .strong {
+      color: @dropdown-filter-primary-color-hover;
+    }
+
+    .@{css-prefix}dropdown-filter-check-icon {
+      margin-right: 4px;
+      visibility: hidden;
+    }
+
+    &.is-active {
+      color: @dropdown-filter-primary-color;
+      
+      .@{css-prefix}dropdown-filter-check-icon {
+        visibility: visible;
+      }
+
+      &:hover {
+        color: @dropdown-filter-primary-color;
+      }
+    }
+  }
+
+  .@{css-prefix}dropdown-filter-item-divided {
+    position: relative;
+    margin-top: 6px;
+    border-top: 1px solid #d1dbe5;
+
+    &:before {
+      display: block;
+      height: 6px;
+      margin: 0 -10px;
+      background-color: #fff;
+      content: "";
+    }
+
+  }
+
+  .popper-arrow, .popper-arrow::after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  .popper-arrow {
+    border-width: 6px;
+  }
+
+  .popper-arrow::after {
+    border-width: 6px;
+    content: " ";
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: 8px;
+
+    .popper-arrow {
+      bottom: -6px;
+      left: 50%;
+      margin-right: 3px;
+      border-top-color: #d1dbe5;
+      border-bottom-width: 0;
+    }
+
+    .popper-arrow::after {
+      bottom: 1px;
+      margin-left: -6px;
+      border-top-color: #fff;
+      border-bottom-width: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 8px;
+
+    .popper-arrow {
+      top: -6px;
+      left: 50%;
+      margin-right: 3px;
+      border-bottom-color: #d1dbe5;
+      border-top-width: 0;
+    }
+
+    .popper-arrow::after {
+      top: 1px;
+      margin-left: -6px;
+      border-bottom-color: #fff;
+      border-top-width: 0;
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: 8px;
+
+    .popper-arrow {
+      top: 50%;
+      left: -6px;
+      margin-bottom: 3px;
+      border-right-color: #d1dbe5;
+      border-left-width: 0;
+    }
+
+    .popper-arrow::after {
+      bottom: -6px;
+      left: 1px;
+      border-right-color: #fff;
+      border-left-width: 0;
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: 8px;
+
+    .popper-arrow {
+      top: 50%;
+      right: -6px;
+      margin-bottom: 3px;
+      border-left-color: #d1dbe5;
+      border-right-width: 0;
+    }
+
+    .popper-arrow::after {
+      right: 1px;
+      bottom: -6px;
+      margin-left: -6px;
+      border-left-color: #fff;
+      border-right-width: 0;
+    }
+  }
+
+  &-title {
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 1;
+    color: #1f2d3d;
+  }
+
+  .dropdown-check-all-item {
+    padding-left: 24px;
+  }
+}

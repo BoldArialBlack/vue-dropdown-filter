@@ -46,8 +46,7 @@ npm run deploy
 [MIT](http://opensource.org/licenses/MIT)
 
 ## 截图
-![截图](https://github.com/BoldArialBlack/snap/example.gif)
-
+![截图](./snap/example.gif)
 
 ## 基本用法
 ```
